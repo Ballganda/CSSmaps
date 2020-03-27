@@ -1,29 +1,3 @@
-pre 	{
-		font-family:Verdana,Tahoma;
-		color:#FFB000;
-    	}
-body	{
-		background:#000000;
-		margin-left:8px;
-		margin-top:0px;
-		}
-a	{
-    	text-decoration:    underline;
-	}
-a:link  {
-    color:  #FFFFFF;
-    }
-a:visited   {
-    color:  #FFFFFF;
-    }
-a:active    {
-    color:  #FFFFFF;
-    }
-a:hover {
-    color:  #FFFFFF;
-    text-decoration:    underline;
-    }
-</style>
 </head>
 <body scroll="yes">
 <pre>
