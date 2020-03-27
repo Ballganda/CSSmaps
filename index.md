@@ -77,4 +77,3 @@ www.counter-strike.net
 <a href="http://www.counter-strike.net">Visit Counter-Strike.net</a>
 </pre>
 </body>
-</html>
