@@ -27,7 +27,7 @@ a:hover {
 </style>
 <body scroll="yes">
 <pre>
-ДДºCrew - Better, Faster, Drunk...er @ 68.232.163.188:27015
+ДДºCrew - Better, Faster, Drunk...er since 2006. Now @ 68.232.163.188:27015
 Find us again by searching for the tag AACrew in the serverbrowser
 //----------------------------------------------------------------
 Welcome to the ДДºCrew Bar,
@@ -58,7 +58,7 @@ All Maps
 2. On hostage maps get all the hostages
 
 cs_office
-1. No sniper box
+1. No sniper box for CTs
 2. Get your ass inside by 2:00 CTs
 
 Low gravity Scout/AWP and knives
