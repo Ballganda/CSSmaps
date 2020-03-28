@@ -42,7 +42,7 @@ to enjoy the server. Remember drinks are always on the house.
 Steward of ДДºCrew 
 
 Guidelines
-I.   Show respect for ДДºCrew members and Leaders Remember
+I.   Show respect for ДДºCrew members and Leaders
 //--------------------------------------------------------
 II.  No racism - EVER
 //--------------------------------------------------------
