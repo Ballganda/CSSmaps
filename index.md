@@ -31,7 +31,7 @@ a:hover {
 ДДºCrew - Better, Faster, Drunk...er since 2006. Now @ 68.232.163.188:27015
 Find us again by searching for the tag AACrew in the serverbrowser
 Join the AAcrew Regulars Steam Group for Server/Event updates and notifications
-and also to access the ДДºReg. Help grow and support the FUN.
+and also to access the ДДºReg tag. Help grow and support the FUN.
 <a href="https://steamcommunity.com/groups/aareg">https://steamcommunity.com/groups/aareg</a>
 //----------------------------------------------------------------
 Welcome to the ДДºCrew Bar,
