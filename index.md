@@ -5,6 +5,7 @@ pre 	{
     	}
 body	{
 		background:#000000;
+		width:100%;
 		margin-left:8px;
 		margin-top:0px;
 		}
@@ -29,28 +30,24 @@ a:hover {
 <pre>
 ДДºCrew - Better, Faster, Drunk...er since 2006. Now @ 68.232.163.188:27015
 Find us again by searching for the tag AACrew in the serverbrowser
+Join the AAcrew Regulars Steam Group for Server/Event updates and notifications
+and also to access the ДДºReg. Help grow and support the FUN.
+<a href="https://steamcommunity.com/groups/aareg">https://steamcommunity.com/groups/aareg</a>
 //----------------------------------------------------------------
 Welcome to the ДДºCrew Bar,
-On behalf of the leader of ДДºCrew MK4VR6GTI and my family here at ДДºCrew I would like to welcome you. Welcome
-you to a gaming experience unlike any other. ДДºCrew is a family of friends created and maintained by people 
-from all over the world. Friends who have found a common bond with each other and desire to enjoy gaming at a 
-different level. If you have come this far be prepared. Behind these walls is a family that decided long ago that
-we were not going to play the way society told us to. We are going to enjoy the game the way WE want to. I warn
-you ДДºCrew is not for everyone but whether you were invited, just curious, or want to make a complaint feel free
-to enjoy the server. Remember drinks are always on the house.
--ДДºBallGanda
-Steward of ДДºCrew 
-
 Guidelines
-I.   Show respect for ДДºCrew members and Leaders
+I.   Show respect for ДДºCrew members and Leaders. Do NOT put ДДº in front of 
+your name unless a member. Non members can join AAcrew Regulars and run the ДДºReg
+clan tag
 //--------------------------------------------------------
 II.  No racism - EVER
 //--------------------------------------------------------
 III. English only 
 IV.  Follow map specific rules and objectives
 V.   No advertising your shit
-VI.  No hacking/Exploiting 
+VI.  No hacking/Exploiting/Script Exploits 
 VII. No spamming mic/text. Why would you want to be an annoying fuck anyway
+VIII. No Porn/No Porn Sprays. We do not need it we have plenty
 
 Map rules:
 All Maps
@@ -64,6 +61,16 @@ cs_office
 Low gravity Scout/AWP and knives
 1. Shoot only from the air/jumping
 2. Knife only from the air/jumping
+
+On behalf of the leader of ДДºCrew MK4VR6GTI and my family here at ДДºCrew I would like to welcome you. Welcome
+you to a gaming experience unlike any other. ДДºCrew is a family of friends created and maintained by people 
+from all over the world. Friends who have found a common bond with each other and desire to enjoy gaming at a 
+different level. If you have come this far be prepared. Behind these walls is a family that decided long ago that
+we were not going to play the way society told us to. We are going to enjoy the game the way WE want to. I warn
+you ДДºCrew is not for everyone but whether you were invited, just curious, or want to make a complaint feel free
+to enjoy the server. Remember drinks are always on the house.
+-ДДºBallGanda
+Steward of ДДºCrew 
 
 If you have any problems contact ДДºBallGanda. I know just where to put your complaint(s).
 
