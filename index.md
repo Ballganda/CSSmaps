@@ -26,7 +26,7 @@ a:hover {
     text-decoration:    underline;
     }
 </style>
-<body scroll="yes">
+<body scroll="no">
 <pre>
 ДДºCrew - Better, Faster, Drunk...er since 2006. Now @ 68.232.163.188:27015
 Find us again by searching for the tag AACrew in the serverbrowser
