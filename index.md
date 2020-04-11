@@ -37,7 +37,7 @@ and also to access the ДДºReg tag. Help grow and support the FUN.
 Welcome to the ДДºCrew Bar,
 Guidelines
 I.   Show respect for ДДºCrew members and Leaders. Do NOT put ДДº in front of 
-your name unless a member. Non members can join AAcrew Regulars and run the ДДºReg
+your name unless a member. Non members can join AAcrew Regulars Steam group and run the ДДºReg
 clan tag
 //--------------------------------------------------------
 II.  No racism - EVER
