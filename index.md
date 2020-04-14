@@ -32,7 +32,7 @@ a:hover {
 Find us again by searching for the tag AACrew in the serverbrowser
 Join the AAcrew Regulars Steam Group for Server/Event updates and notifications
 and also to access the ДДºReg tag. Help grow and support the FUN.
-<a href="https://steamcommunity.com/groups/aareg">https://steamcommunity.com/groups/aareg</a>
+<a href="https://steamcommunity.com/groups/AAcrew">https://steamcommunity.com/groups/AAcrew</a>
 //----------------------------------------------------------------
 Welcome to the ДДºCrew Bar,
 Guidelines
