@@ -31,12 +31,11 @@ a:hover {
 </head>
 <body scroll="yes">
 <pre>
-Welcome to the ДДºCrew Bar
-Better, Faster, Drunk...er Since...We can't remember.
-Find us again by searching for the tag AACrew in the serverbrowser tags
-<a href="https://steamcommunity.com/groups/AAcrew">AAcrew Steam Group</a>
+Welcome to theREGistration! 
+Find us again by searching for the tag "reg" in the serverbrowser tags
+<a href="https://steamcommunity.com/groups/regpledge">theREG Public Steam Group</a>
 Guidelines
-I.   Show respect for ДДºCrew members and Leaders
+I.   Show respect for theREG members and Leaders
 ------------------------------------------------
 II.  No racism - EVER
 ------------------------------------------------
@@ -49,9 +48,6 @@ VII. No spamming mic/text. Why would you want to be an annoying fuck anyway
 Map rules: All Maps
 1. Do the objectives.
 2. On hostage maps get all the hostages. Possible slay for half assing it.
-cs_office:
-1. No sniper box for CTs
-2. Get your ass inside on carpet by 2:00 CTs
 Low gravity Scout/AWP and knives:
 1. Shoot only from the air/jumping
 2. Knife only from the air/jumping
