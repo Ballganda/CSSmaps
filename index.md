@@ -31,7 +31,7 @@ a:hover {
 Welcome to the ДДºCrew Bar
 Better, Faster, Drunk...er Since...We can't remember.
 Find us again by searching for the tag AACrew in the serverbrowser
-
+<a href="https://steamcommunity.com/groups/AAcrew">AAcrew Steam Group</a> Join for updates today!
 Guidelines
 I.   Show respect for ДДºCrew members and Leaders
 ------------------------------------------------
