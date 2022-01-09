@@ -28,56 +28,37 @@ a:hover {
 </style>
 <body scroll="no">
 <pre>
-ДДºCrew - Better, Faster, Drunk...er since 2006. Now @ 68.232.163.188:27015
+Welcome to the ДДºCrew Bar
+Better, Faster, Drunk...er Since...We can't remember.
 Find us again by searching for the tag AACrew in the serverbrowser
-Join the AAcrew Regulars Steam Group for Server/Event updates and notifications
-and also to access the ДДºRegulars tag. Help grow and support the FUN.
-<a href="https://steamcommunity.com/groups/AAcrew">AAcrew Steam Group</a>
-//----------------------------------------------------------------
-Welcome to the ДДºCrew Bar,
+
 Guidelines
-I.   Show respect for ДДºCrew members and Leaders. Do NOT put ДДº in front of 
-your name unless a member. Non members can join AAcrew Regulars Steam group and run the ДДºReg
-clan tag
-//----------------------------------------------------------------
+I.   Show respect for ДДºCrew members and Leaders
+------------------------------------------------
 II.  No racism - EVER
-//----------------------------------------------------------------
+------------------------------------------------
 III. English only 
 IV.  Follow map specific rules and objectives
 V.   No advertising your shit
-VI.  No hacking/Exploiting/Script Exploits 
+VI.  No hacking/Exploiting 
 VII. No spamming mic/text. Why would you want to be an annoying fuck anyway
-VIII. No Porn/No Porn Sprays. We do not need it we have plenty
-//----------------------------------------------------------------
-Map rules:
-All Maps
+
+Map rules: All Maps
 1. Do the objectives.
-2. On hostage maps get all the hostages
-
-cs_office
+2. On hostage maps get all the hostages. Possible slay for half assing it.
+cs_office:
 1. No sniper box for CTs
-2. Get your ass inside by 2:00 CTs
-
-Low gravity Scout/AWP and knives
+2. Get your ass inside on carpet by 2:00 CTs
+Low gravity Scout/AWP and knives:
 1. Shoot only from the air/jumping
 2. Knife only from the air/jumping
-//----------------------------------------------------------------
-On behalf of the leader of ДДºCrew MK4VR6GTI and my family here at ДДºCrew I would like to welcome you. Welcome
-you to a gaming experience unlike any other. ДДºCrew is a family of friends created and maintained by people 
-from all over the world. Friends who have found a common bond with each other and desire to enjoy gaming at a 
-different level. If you have come this far be prepared. Behind these walls is a family that decided long ago that
-we were not going to play the way society told us to. We are going to enjoy the game the way WE want to. I warn
-you ДДºCrew is not for everyone but whether you were invited, just curious, or want to make a complaint feel free
-to enjoy the server. Remember drinks are always on the house.
--ДДºBallGanda
-Steward of ДДºCrew 
 
-If you have any problems contact ДДºBallGanda. I know just where to put your complaint(s).
+If you have any problems yell into the wind.
 //----------------------------------------------------------------
-Rates for this server. The server is forcing these rates on all players
-rate "20000"
-cl_cmdrate "100"
-cl_updaterate "100"
+Rates for this server.
+rate "200000"
+cl_cmdrate "200"
+cl_updaterate "200"
 //----------------------------------------------------------------
 You are playing Counter-Strike: Source
 Visit the official CS web site @
