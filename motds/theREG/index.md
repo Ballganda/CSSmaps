@@ -15,16 +15,16 @@ a	{
     	text-decoration:    underline;
 	}
 a:link  {
-    color:  #FFFFFF;
+    color:  #FFFFF0;
     }
 a:visited   {
-    color:  #FFFFFF;
+    color:  #FFFF0F;
     }
 a:active    {
-    color:  #FFFFFF;
+    color:  #FFF0FF;
     }
 a:hover {
-    color:  #FFFFFF;
+    color:  #FF0FFF;
     text-decoration:    underline;
     }
 </style>
@@ -53,7 +53,12 @@ Low gravity Scout/AWP and knives:
 2. Knife only from the air/jumping
 
 If you have any problems yell into the wind.
-
+//----------------------------------------------------------------
+Rates for this server.
+rate "200000"
+cl_cmdrate "200"
+cl_updaterate "200"
+//----------------------------------------------------------------
 You are playing Counter-Strike: Source
 Visit the official CS web site @
 www.counter-strike.net
