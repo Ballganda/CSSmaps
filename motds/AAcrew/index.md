@@ -13,16 +13,16 @@ a	{
     	text-decoration:    underline;
 	}
 a:link  {
-    color:  #FFFFFF;
+    color:  #FFFFF0;
     }
 a:visited   {
-    color:  #FFFFFF;
+    color:  #FFFF0F;
     }
 a:active    {
-    color:  #FFFFFF;
+    color:  #FFF0FF;
     }
 a:hover {
-    color:  #FFFFFF;
+    color:  #FF0FFF;
     text-decoration:    underline;
     }
 </style>
