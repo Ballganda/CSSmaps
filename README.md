@@ -1,2 +1,2 @@
-# theREG Server Hosting
+# theREG
 CSS
