@@ -1,0 +1,8 @@
+LightmappedGeneric
+{
+	"$basetexture"	"decals\HL2_posterAlyx-Ely"
+	"$translucent" "1"
+	"$decal" "1"
+	"$decalscale" "0.100"
+
+}

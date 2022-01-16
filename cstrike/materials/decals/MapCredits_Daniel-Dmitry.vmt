@@ -1,0 +1,8 @@
+LightmappedGeneric
+{
+	"$basetexture"	"decals\MapCredits_Daniel-Dmitry"
+	"$translucent" "1"
+	"$decal" "1"
+	"$decalscale" "0.50"
+
+}
