@@ -5,19 +5,17 @@
 
 #pragma newdecls required
 
-#define MAX_WEAPONS 69
+#define MAX_ENTITY 69
 
 public Plugin myinfo = {
-	name = "Give Weapon & Item",
+	name = "Admin Give entities to players | Weapons & Items",
 	author = "Kiske, Kento, BallGanda",
 	description = "Give a weapon or item to a player from a command",
-	version = "1.1.b2",
+	version = "1.1.b4",
 	url = "http://www.sourcemod.net/"
 };
 
-//updated item/weapon list for CS:S. Left all the CSGO stuff
-
-char g_weapons[MAX_WEAPONS][] = {
+char g_entity[MAX_ENTITY][] = {
 	"item_cutters", //csgo
 	"item_defuser",
 	"item_exosuit", //csgo
@@ -91,44 +89,49 @@ char g_weapons[MAX_WEAPONS][] = {
 
 public void OnPluginStart()
 {
-	RegAdminCmd("sm_weapon", smWeapon, ADMFLAG_BAN, "- <target> <weaponname>");
-	RegAdminCmd("sm_weaponlist", smWeaponList, ADMFLAG_BAN, "- list of the weapon names");
+	RegAdminCmd("sm_give", smGive, ADMFLAG_BAN, "- <target> <entityname>");
 }
 
-public Action smWeapon(int client, int args)
-{
-	if(args < 2)
-	{
-		ReplyToCommand(client, "[SM] Usage: sm_weapon <name | #userid> <weaponname>");
+public Action smGive(int client, int args) {
+	if(args < 2) {
+		char temp[16];
+		GetCmdArg(1, temp, sizeof(temp));
+		if(StrEqual(temp, "list", false)) {
+			smGiveList(client);
+		} else {
+			ReplyToCommand(client, "[SM] Usage: sm_give <name | #userid> <entityname>");
+			ReplyToCommand(client, "[SM] Usage: sm_give list | for entity list");
+		}
 		return Plugin_Handled;
 	}
 	
 	char sArg[256];
 	char sTempArg[32];
-	char sWeaponName[32], sWeaponToGive[32];
+	char sEntityName[32], sEntityToGive[32];
 	int iL;
 	int iNL;
 	
 	GetCmdArgString(sArg, sizeof(sArg));
 	iL = BreakString(sArg, sTempArg, sizeof(sTempArg));
 	
-	if((iNL = BreakString(sArg[iL], sWeaponName, sizeof(sWeaponName))) != -1)
+	if((iNL = BreakString(sArg[iL], sEntityName, sizeof(sEntityName))) != -1)
 		iL += iNL;
 	
 	int iValid = 0;
 	
-	for(int i = 0; i < MAX_WEAPONS; ++i)
+	for(int i = 0; i < MAX_ENTITY; ++i)
 	{
-		if(StrContains(g_weapons[i], sWeaponName) != -1)
+		if(StrContains(g_entity[i], sEntityName) != -1)
 		{
 			iValid = 1;
-			strcopy(sWeaponToGive, sizeof(sWeaponToGive), g_weapons[i]);
+			strcopy(sEntityToGive, sizeof(sEntityToGive), g_entity[i]);
 			break;
 		}
 	}
 	if(!iValid)
 	{
-		ReplyToCommand(client, "[SM] The weaponname (%s) isn't valid", sWeaponName);
+		ReplyToCommand(client, "[SM] The entity name (%s) isn't valid", sEntityName);
+		ReplyToCommand(client, "[SM] sm_give list | for entity list");
 		return Plugin_Handled;
 	}
 	
@@ -143,18 +146,16 @@ public Action smWeapon(int client, int args)
 	}
 	
 	for (int i = 0; i < iTargetCount; i++)
-		GivePlayerItem(sTargetList[i], sWeaponToGive);
+		GivePlayerItem(sTargetList[i], sEntityToGive);
 	
 	return Plugin_Handled;
 }
 
-public Action smWeaponList(int client, int args)
-{
-	for(int i = 0; i < MAX_WEAPONS; ++i)
-		ReplyToCommand(client, "%s", g_weapons[i]);
-	
+void smGiveList(int client) {
 	ReplyToCommand(client, "");
-	ReplyToCommand(client, "* No need to put weapon_ in the <weaponname>");
-	
-	return Plugin_Handled;
+	for(int i = 0; i < MAX_ENTITY; ++i) {
+		ReplyToCommand(client, "%s", g_entity[i]);
+	}
+	ReplyToCommand(client, "*No need to put weapon_/item_ in the <entityname>*");
+	ReplyToCommand(client, "*Partials work if not overlapping other entity name*");
 }
