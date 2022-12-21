@@ -200,9 +200,9 @@ public Action smGive(int client, int args) {
 
 //Function to handle the arg that requests viewing the entity list
 void smGiveList(int client) {
-	ReplyToCommand(client, "{weaponslot-|-ammo offset-|-ammo amount-|entity name----------}");
+	ReplyToCommand(client, "| entity name---------- | weaponslot- | -ammo offset- | -ammo amount- |");
 	for(int i = 0; i < max_entity; ++i) {
-		ReplyToCommand(client, " %s         | %s          | %s          | %s", g_entity[i][1], g_entity[i][2], g_entity[i][3], g_entity[i][0]);
+		ReplyToCommand(client, "| %-21.21s | %-11.11s | %-13.13s | %-13.13s |", g_entity[i][0], g_entity[i][1], g_entity[i][2], g_entity[i][3]);
 	}
 	ReplyToCommand(client, "*No need to put weapon_/item_ in the <entityname>*");
 	ReplyToCommand(client, "*Partials work if not overlapping other entity name*");
