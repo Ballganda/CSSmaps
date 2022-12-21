@@ -7,102 +7,99 @@
 //Enforce the new syntax in sourcemod 1.7+
 #pragma newdecls required
 
-#define PLUGIN_VERSION "1.1.b6"
+#define NAME "Admin SM_Give Entities | Weapons & Items"
+#define AUTHOR "Kiske, Kento, BallGanda"
+#define DESCRIPTION "Give a weapon or item to a player from a command"
+#define PLUGIN_VERSION "1.1.b7"
+#define URL "http://www.sourcemod.net/"
 
-public Plugin myinfo = {
-	name = "Admin SM_Give Entities | Weapons & Items",
-	author = "Kiske, Kento, BallGanda",
-	description = "Give a weapon or item to a player from a command",
-	version = PLUGIN_VERSION,
-	url = "http://www.sourcemod.net/"
-};
 
 // Registers the "sm_give" admin command with the specified parameters
 public void OnPluginStart()
 {
-	RegAdminCmd("sm_give", smGive, ADMFLAG_BAN, "<name|#userid> <entityname>");
+	RegAdminCmd("sm_bgive", smGive, ADMFLAG_BAN, "<name|#userid> <entityname>");
 }
 
 // Declare a global char array named "g_entity"
 // Initialize the array with a list of strings representing different entity names in the game
-// want to figure out how to store {{entity name, weaponslot, ammooffset, ammoamount},...}
-char g_entity[][] = {
+// want to figure out how to store {{entity name, weaponslot, ammo offset, ammo amount},...}
+char g_entity[][][] = {
 	{"item_cutters","-1","-1","1"}, //csgo
-	"item_defuser","-1","-1","1"},
-	"item_exosuit","-1","-1","1"}, //csgo
-	"item_assaultsuit","-1","-1","1"},
-	"item_heavyassaultsuit","-1","-1","1"}, //csgo
-	"item_kevlar","-1","-1","1"},
-	"item_nvgs","-1","-1","1"},
-	"weapon_ak47","0","2","90"}, //ammodata 2,90
-	"weapon_aug","0","2","90"}, //ammodata 2,90
-	"weapon_awp","0","5","30"}, //ammodata 5,30
-	"weapon_axe","2","-1","1"}, //csgo
-	"weapon_c4","4","-1","1"},
-	"weapon_bizon","0","-1","-1"}, //csgo
-	"weapon_breachcharge","-1","-1","-1"}, //csgo
-	"weapon_bumpmine","-1","-1","-1"}, //csgo
-	"weapon_cz75a","1","-1","-1"}, //csgo
-	"weapon_deagle","1","1","35"}, //ammodata 1,35
-	"weapon_decoy","-1","-1","-1"}, //csgo
-	"weapon_elite","1","6","120"}, //ammodata 6,120
-	"weapon_famas","0","3","90"}, //ammodata 3,90
-	"weapon_fists","2","-1","-1"}, //csgo
-	"weapon_fiveseven","1","10","100"}, //ammodata 10,100
-	"weapon_flashbang","3","12","1"}, //ammodata 12,1
-	"weapon_g3sg1","0","2","90"}, //ammodata 2,90
-	"weapon_galil","0","3","90"}, //ammodata 3,90
-	"weapon_galilar","0","-1","-1"}, //csgo
-	"weapon_glock","1","6","120"}, //ammodata 6,120
-	"weapon_hammer","2","-1","-1"},//csgo
-	"weapon_healthshot","-1","-1","-1"}, //csgo
-	"weapon_hegrenade","3","11","1"}, //ammodata 11,1
-	"weapon_hkp2000","-1","-1","-1"}, //csgo
-	"weapon_incgrenade","-1","-1","-1"}, //csgo
-	"weapon_knife","2","-1","-1"},
-	"weapon_knifegg","2","-1","-1"}, //csgo
-	"weapon_m249","0","4","200"}, //ammodata 4,200
-	"weapon_m3","0","3","90"}, //ammodata 7,32
-	"weapon_m4a1","0","3","90"}, //ammodata 3,90
-	"weapon_m4a1_silencer","0","-1","-1"}, //csgo
-	"weapon_mac10","0","8","100"}, //ammodata 8,100
-	"weapon_mag7","-1","-1","-1"}, //csgo
-	"weapon_molotov","3","-1","-1"}, //csgo
-	"weapon_mp5navy","0","6","120"}, //ammodata 6,120
-	"weapon_mp5sd","-1","-1","-1"}, //csgo
-	"weapon_mp7","-1","-1","-1"}, //csgo
-	"weapon_mp9","-1","-1","-1"}, //csgo
-	"weapon_negev","-1","-1","-1"}, //csgo
-	"weapon_nova","-1","-1","-1"}, //csgo
-	"weapon_p228","1","9","52"}, //ammodata 9,52
-	"weapon_p250","-1","-1","-1"}, //csgo
-	"weapon_p90","0","10","100"}, //ammodata 10,100
-	"weapon_revolver","-1","-1","-1"}, //csgo
-	"weapon_sawedoff","-1","-1","-1"}, //csgo
-	"weapon_scar20","-1","-1","-1"}, //csgo
-	"weapon_scout","0","2","90"}, //ammodata 2,90
-	"weapon_sg550","0","3","90"}, //ammodata 3,90
-	"weapon_sg552","0","3","90"}, //ammodata 3,90
-	"weapon_sg556","-1","-1","-1"}, //csgo
-	"weapon_shield","-1","-1","-1"}, //csgo
-	"weapon_smokegrenade","3","13","1"}, //ammodata 13,1
-	"weapon_spanner","2","-1","-1"}, //csgo
-	"weapon_ssg08","-1","-1","-1"}, //csgo
-	"weapon_tagrenade","-1","-1","-1"}, //csgo
-	"weapon_taser","-1","-1","-1"}, //csgo
-	"weapon_tec9","-1","-1","-1"}, //csgo
-	"weapon_tmp","0","6","120"}, //ammodata 6,120
-	"weapon_ump45","0","8","120"}, //ammodata 8,100
-	"weapon_usp","1","8","100"}, //ammodata 8,100
-	"weapon_usp_silencer","-1","-1","-1"}, //csgo
-	"weapon_xm1014","0","7","32"} //ammod ta 7,32
+	{"item_defuser","-1","-1","1"},
+	{"item_exosuit","-1","-1","1"}, //csgo
+	{"item_assaultsuit","-1","-1","1"},
+	{"item_heavyassaultsuit","-1","-1","1"}, //csgo
+	{"item_kevlar","-1","-1","1"},
+	{"item_nvgs","-1","-1","1"},
+	{"weapon_ak47","0","2","90"},
+	{"weapon_aug","0","2","90"},
+	{"weapon_awp","0","5","30"},
+	{"weapon_axe","2","-1","1"}, //csgo
+	{"weapon_c4","4","-1","1"},
+	{"weapon_bizon","0","-1","-1"}, //csgo
+	{"weapon_breachcharge","-1","-1","-1"}, //csgo
+	{"weapon_bumpmine","-1","-1","-1"}, //csgo
+	{"weapon_cz75a","1","-1","-1"}, //csgo
+	{"weapon_deagle","1","1","35"},
+	{"weapon_decoy","-1","-1","-1"}, //csgo
+	{"weapon_elite","1","6","120"},
+	{"weapon_famas","0","3","90"},
+	{"weapon_fists","2","-1","-1"}, //csgo
+	{"weapon_fiveseven","1","10","100"},
+	{"weapon_flashbang","3","12","1"},
+	{"weapon_g3sg1","0","2","90"},
+	{"weapon_galil","0","3","90"},
+	{"weapon_galilar","0","-1","-1"}, //csgo
+	{"weapon_glock","1","6","120"},
+	{"weapon_hammer","2","-1","-1"},//csgo
+	{"weapon_healthshot","-1","-1","-1"}, //csgo
+	{"weapon_hegrenade","3","11","1"},
+	{"weapon_hkp2000","-1","-1","-1"}, //csgo
+	{"weapon_incgrenade","-1","-1","-1"}, //csgo
+	{"weapon_knife","2","-1","-1"},
+	{"weapon_knifegg","2","-1","-1"}, //csgo
+	{"weapon_m249","0","4","200"},
+	{"weapon_m3","0","3","90"},
+	{"weapon_m4a1","0","3","90"},
+	{"weapon_m4a1_silencer","0","-1","-1"}, //csgo
+	{"weapon_mac10","0","8","100"},
+	{"weapon_mag7","-1","-1","-1"}, //csgo
+	{"weapon_molotov","3","-1","-1"}, //csgo
+	{"weapon_mp5navy","0","6","120"},
+	{"weapon_mp5sd","-1","-1","-1"}, //csgo
+	{"weapon_mp7","-1","-1","-1"}, //csgo
+	{"weapon_mp9","-1","-1","-1"}, //csgo
+	{"weapon_negev","-1","-1","-1"}, //csgo
+	{"weapon_nova","-1","-1","-1"}, //csgo
+	{"weapon_p228","1","9","52"},
+	{"weapon_p250","-1","-1","-1"}, //csgo
+	{"weapon_p90","0","10","100"},
+	{"weapon_revolver","-1","-1","-1"}, //csgo
+	{"weapon_sawedoff","-1","-1","-1"}, //csgo
+	{"weapon_scar20","-1","-1","-1"}, //csgo
+	{"weapon_scout","0","2","90"},
+	{"weapon_sg550","0","3","90"},
+	{"weapon_sg552","0","3","90"},
+	{"weapon_sg556","-1","-1","-1"}, //csgo
+	{"weapon_shield","-1","-1","-1"}, //csgo
+	{"weapon_smokegrenade","3","13","1"},
+	{"weapon_spanner","2","-1","-1"}, //csgo
+	{"weapon_ssg08","-1","-1","-1"}, //csgo
+	{"weapon_tagrenade","-1","-1","-1"}, //csgo
+	{"weapon_taser","-1","-1","-1"}, //csgo
+	{"weapon_tec9","-1","-1","-1"}, //csgo
+	{"weapon_tmp","0","6","120"},
+	{"weapon_ump45","0","8","120"},
+	{"weapon_usp","1","8","100"},
+	{"weapon_usp_silencer","-1","-1","-1"}, //csgo
+	{"weapon_xm1014","0","7","32"} 
 };
 
 //Declare global int Get the size of the weapon/item array
 int max_entity = sizeof(g_entity);
 
 //for use when adding code for slot checking to remove item before
-//giving an item
+//giving an item...not implemented yet
 enum eWeaponSlot {
 	Slot_Invalid = -1, //Invalid weapon slot
 	Slot_Primary, //==0 Primary weapon slot
@@ -125,8 +122,9 @@ public Action smGive(int client, int args) {
 			smGiveList(client);
 		} 
 		if(StrEqual(sArg, "about", false)) {
-			smGiveabout(client);
-		} else {
+			smGiveAbout(client);
+		}
+		if(!StrEqual(sArg, "list", false) && !StrEqual(sArg, "about", false)) {
 			ReplyToCommand(client, "[SM] Usage: sm_give <name|#userid> <entityname>");
 			ReplyToCommand(client, "[SM] Usage: sm_give list |for %i entity list", max_entity);
 			ReplyToCommand(client, "[SM] Usage: sm_give about |for about info");
@@ -158,11 +156,11 @@ public Action smGive(int client, int args) {
     //Step through g_entity array  
 	for(int i = 0; i < max_entity; ++i) {
 		// Check if the entity name is contained in the g_entity array
-		if(StrContains(g_entity[i], sEntityName) != -1) {
+		if(StrContains(g_entity[i][0], sEntityName) != -1) {
 			//Set valid variable to true because it was found in g_entity
 			iValid = true;
 			// Copy the matching entity name to sEntityToGive
-			strcopy(sEntityToGive, sizeof(sEntityToGive), g_entity[i]);
+			strcopy(sEntityToGive, sizeof(sEntityToGive), g_entity[i][0]);
 			// Break out of the for loop now once entity matched
 			break;
 		}
@@ -202,9 +200,9 @@ public Action smGive(int client, int args) {
 
 //Function to handle the arg that requests viewing the entity list
 void smGiveList(int client) {
-	ReplyToCommand(client, "");
+	ReplyToCommand(client, "{weaponslot-|-ammo offset-|-ammo amount-|entity name----------}");
 	for(int i = 0; i < max_entity; ++i) {
-		ReplyToCommand(client, "%s", g_entity[i]);
+		ReplyToCommand(client, " %s         | %s          | %s          | %s", g_entity[i][1], g_entity[i][2], g_entity[i][3], g_entity[i][0]);
 	}
 	ReplyToCommand(client, "*No need to put weapon_/item_ in the <entityname>*");
 	ReplyToCommand(client, "*Partials work if not overlapping other entity name*");
@@ -213,9 +211,17 @@ void smGiveList(int client) {
 
 void smGiveAbout(int client) {
 	ReplyToCommand(client, "");
-	ReplyToCommand(client, "Plugin name: %s", name);
-	ReplyToCommand(client, "Plugin author: %s", author);
-	ReplyToCommand(client, "Plugin description: %s", description);
-	ReplyToCommand(client, "Plugin version: %s", version);
-	ReplyToCommand(client, "Plugin url: %s", url);
+	ReplyToCommand(client, "Plugin Name.......: %s", NAME);
+	ReplyToCommand(client, "Plugin Author.....: %s", AUTHOR);
+	ReplyToCommand(client, "Plugin Description: %s", DESCRIPTION);
+	ReplyToCommand(client, "Plugin Version....: %s", PLUGIN_VERSION);
+	ReplyToCommand(client, "Plugin URL........: %s", URL);
 }
+
+public Plugin myinfo = {
+	name = NAME,
+	author = AUTHOR,
+	description = DESCRIPTION,
+	version = PLUGIN_VERSION,
+	url = URL
+};
