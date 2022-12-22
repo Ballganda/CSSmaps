@@ -17,7 +17,7 @@
 // Registers the "sm_give" admin command with the specified parameters
 public void OnPluginStart()
 {
-	RegAdminCmd("sm_bgive", smGive, ADMFLAG_BAN, "<name|#userid> <entityname>");
+	RegAdminCmd("sm_give", smGive, ADMFLAG_BAN, "<name|#userid> <entityname>");
 }
 
 // Declare a global char array named "g_entity"
@@ -98,16 +98,14 @@ char g_entity[][][] = {
 //Declare global int Get the size of the weapon/item array
 int max_entity = sizeof(g_entity);
 
-//for use when adding code for slot checking to remove item before
-//giving an item...not implemented yet
-enum eWeaponSlot {
-	Slot_Invalid = -1, //Invalid weapon slot
-	Slot_Primary, //==0 Primary weapon slot
-	Slot_Secondary, //==1 Secondary weapon slot
-	Slot_Melee, //==2 Melee knife weapon slot
-	Slot_Projectile, //==3 Projectile grenades, flashbangs, etc weapon slot
-	Slot_Explosive, //==4 Explosive c4 weapon slot
-}
+//Declaring the elements for a table to print in console and headers for the columns
+char h_barsingle[] = "--------------------------------------------------------------------------------";
+char h_bardouble[] = "================================================================================";
+char h_entity_name[] = "Entity Name";
+char h_weapon_slot[] = "Weapon Slot";
+char h_ammo_offset[] = "Ammo Offset";
+char h_ammo_reserve[] = "Ammo Reserve";
+
 
 // Handles the "sm_give" admin command
 public Action smGive(int client, int args) {
@@ -135,7 +133,9 @@ public Action smGive(int client, int args) {
 	// Declare and initialize variables for storing command arguments, the entity name, and whether the entity name is valid
 	char sArg[255];
 	char sTargetArg[32];
-	char sEntityName[32], sEntityToGive[32];
+	char sEntityName[32], sEntityToGive[32], sEntitySlot[32];
+	int iEntitySlot;
+	int iEntityRemove;
 	int iLengthArg1;
 	int iLengthArg2;
 	
@@ -161,6 +161,10 @@ public Action smGive(int client, int args) {
 			iValid = true;
 			// Copy the matching entity name to sEntityToGive
 			strcopy(sEntityToGive, sizeof(sEntityToGive), g_entity[i][0]);
+			// Copy the matching entity name to sEntitySlot
+			strcopy(sEntitySlot, sizeof(sEntitySlot), g_entity[i][1]);
+			//Convert the string to an int and store in iEntitySlot
+			iEntitySlot = StringToInt(sEntitySlot);
 			// Break out of the for loop now once entity matched
 			break;
 		}
@@ -192,6 +196,21 @@ public Action smGive(int client, int args) {
 	
 	//This is the actual giving of weapons to the members of the target list
 	for (int i = 0; i < iTargetCount; i++) {
+		//get the entity value in the players target slot already
+		iEntityRemove = GetPlayerWeaponSlot(sTargetList[i], iEntitySlot);
+
+		//Perform check if the target has a weapon/item in the target slot already
+		if(iEntityRemove != -1){
+			//remove the item from the slot of the target player
+			RemovePlayerItem(sTargetList[i], iEntityRemove);
+			//remove only the entity from the player from the map
+			//need to make a cvar to turn this on/off
+			RemoveEntity(iEntityRemove);
+		}
+		
+		//add option check chargeing for weapon cvar controlled 
+		
+		//Give the new item to the target player
 		GivePlayerItem(sTargetList[i], sEntityToGive);
 	}
 	
@@ -200,13 +219,19 @@ public Action smGive(int client, int args) {
 
 //Function to handle the arg that requests viewing the entity list
 void smGiveList(int client) {
-	ReplyToCommand(client, "| entity name---------- | weaponslot- | -ammo offset- | -ammo amount- |");
+	ReplyToCommand(client, "%s", h_bardouble);
+	ReplyToCommand(client, "| %-21.21s | %-11.11s | %-11.11s | %-24.24s |", h_entity_name, h_weapon_slot, h_ammo_offset, h_ammo_reserve);
+	ReplyToCommand(client, "%s", h_bardouble);
+	
 	for(int i = 0; i < max_entity; ++i) {
-		ReplyToCommand(client, "| %-21.21s | %-11.11s | %-13.13s | %-13.13s |", g_entity[i][0], g_entity[i][1], g_entity[i][2], g_entity[i][3]);
+		ReplyToCommand(client, "| %-21.21s | %-11.11s | %-11.11s | %-24.24s |", g_entity[i][0], g_entity[i][1], g_entity[i][2], g_entity[i][3]);
 	}
+	
+	ReplyToCommand(client, "%s", h_barsingle);
 	ReplyToCommand(client, "*No need to put weapon_/item_ in the <entityname>*");
-	ReplyToCommand(client, "*Partials work if not overlapping other entity name*");
+	ReplyToCommand(client, "*Partials substrings work if not overlapping other entity name*");
 	ReplyToCommand(client, "*If in game entity name is not on list plugin needs update*");
+	ReplyToCommand(client, "%s", h_barsingle);
 }
 
 void smGiveAbout(int client) {
