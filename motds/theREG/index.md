@@ -64,6 +64,8 @@ Visit the official CS web site @
 www.counter-strike.net
 <a href="http://www.counter-strike.net">Visit Counter-Strike.net</a>
 <a href="steam://connect/thebar.aacrew.net">Visit The Bar @ AAcrew</a>
+steam://connect/thebar.aacrew.net
+
 </pre>
 </body>
 </html>
