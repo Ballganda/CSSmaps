@@ -55,7 +55,6 @@ Appendix
 Low gravity Scout/AWP and knives
 1 Shoot only from the air/jumping
 2 Knife only from the air/jumping
-
 //----------------------------------------------------------------
 Rates for this server.
 rate "80000"
