@@ -50,17 +50,17 @@ Map rules: All Maps
 
 If you have any problems yell into the wind.
 
-Appendix:  
-//----------------------------------------------------------------  
-Low gravity Scout/AWP and knives:  
-1. Shoot only from the air/jumping  
-2. Knife only from the air/jumping  
-//----------------------------------------------------------------  
-Rates for this server.  
-rate "80000"  
-cl_cmdrate "100"  
-cl_updaterate "100"  
-//----------------------------------------------------------------  
+Appendix
+//----------------------------------------------------------------
+Low gravity Scout/AWP and knives
+1. Shoot only from the air/jumping
+2. Knife only from the air/jumping
+//----------------------------------------------------------------
+Rates for this server.
+rate "80000"
+cl_cmdrate "100"
+cl_updaterate "100"
+//----------------------------------------------------------------
 </pre>
 </body>
 </html>
