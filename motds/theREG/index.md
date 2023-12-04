@@ -31,7 +31,7 @@ a:hover {
 </head>
 <body scroll="yes">
 <pre>
-Welcome to theREGistration! 
+Welcome to theREGistration! Seasons Greetings To ALL!
 Find us again by searching for the tag "reg" in the serverbrowser tags
 <a href="https://steamcommunity.com/groups/regpledge">theREG Public Steam Group</a>
 Actively looking for members in 2024 join theREG Public Steam Group to apply.
