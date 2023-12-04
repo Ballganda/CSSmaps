@@ -47,9 +47,9 @@ VII. No spamming mic/text. Why would you want to be an annoying fuck anyway
 Map rules: All Maps
 1. Do the objectives.
 2. On hostage maps get all the hostages. Possible slay for half assing it.
-
+//----------------------------------------------------------------
 If you have any problems yell into the wind.
-
+//----------------------------------------------------------------
 Appendix
 //----------------------------------------------------------------
 Low gravity Scout/AWP and knives
