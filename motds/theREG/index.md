@@ -34,36 +34,33 @@ a:hover {
 Welcome to theREGistration! 
 Find us again by searching for the tag "reg" in the serverbrowser tags
 <a href="https://steamcommunity.com/groups/regpledge">theREG Public Steam Group</a>
+Actively looking for members in 2024 join theREG Public Steam Group to apply.
 Guidelines
 I.   Show respect for theREG members and Leaders
-------------------------------------------------
 II.  No racism - EVER
-------------------------------------------------
 III. English only 
 IV.  Follow map specific rules and objectives
 V.   No advertising your shit
 VI.  No hacking/Exploiting 
 VII. No spamming mic/text. Why would you want to be an annoying fuck anyway
-
+//----------------------------------------------------------------
 Map rules: All Maps
 1. Do the objectives.
 2. On hostage maps get all the hostages. Possible slay for half assing it.
+
+If you have any problems yell into the wind.
+
+Appendix:
+//----------------------------------------------------------------
 Low gravity Scout/AWP and knives:
 1. Shoot only from the air/jumping
 2. Knife only from the air/jumping
-
-If you have any problems yell into the wind.
 //----------------------------------------------------------------
 Rates for this server.
-rate "200000"
-cl_cmdrate "200"
-cl_updaterate "200"
+rate "80000"
+cl_cmdrate "100"
+cl_updaterate "100"
 //----------------------------------------------------------------
-You are playing Counter-Strike: Source
-Visit the official CS web site @
-www.counter-strike.net
-<a href="http://www.counter-strike.net">Visit Counter-Strike.net</a>
-
 </pre>
 </body>
 </html>
