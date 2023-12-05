@@ -57,7 +57,7 @@ Low gravity Scout/AWP and knives
 2. Knife only from the air/jumping
 //----------------------------------------------------------------
 Rates for this server.
-rate "80000"
+rate "25000"
 cl_cmdrate "100"
 cl_updaterate "100"
 //----------------------------------------------------------------
